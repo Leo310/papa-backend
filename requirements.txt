@@ -1,2 +1,5 @@
 fastapi
 uvicorn[standard]
+python-dotenv
+pinecone-client
+llama-index
