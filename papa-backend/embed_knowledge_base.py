@@ -6,13 +6,8 @@ from llama_index.vector_stores import PineconeVectorStore
 from llama_index.schema import TextNode
 from llama_index.embeddings import OpenAIEmbedding
 
-from llama_index import VectorStoreIndex
-from llama_index.storage import StorageContext
 
-load_dotenv()
-
-
-def run_rag_pipeline():
+def embed_knowledge_base():
     api_key = os.environ["PINECONE_API_KEY"]
     environment = os.environ["PINECONE_ENVIRONMENT"]
 
@@ -38,15 +33,7 @@ def run_rag_pipeline():
     textnode.embedding = node_embedding
     pinecone_vector_store.add([textnode])
 
-    ####
-
-    index = VectorStoreIndex.from_vector_store(vector_store=pinecone_vector_store)
-    query_engine = index.as_query_engine()
-
-    query = "Can you tell me about the vision of Web3?"
-    results = query_engine.query(query)
-    print(results)
-
 
 if __name__ == "__main__":
-    run_rag_pipeline()
+    load_dotenv()
+    embed_knowledge_base()
