@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from fastapi import FastAPI
 
-from retrieval import run_retrieval
+from retriever import run_retrieval
 
 load_dotenv()
 app = FastAPI()
