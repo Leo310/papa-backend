@@ -10,7 +10,6 @@ from dotenv import load_dotenv
 
 import pinecone
 from llama_index.vector_stores import PineconeVectorStore
-from llama_index import VectorStoreIndex
 from llama_index.embeddings import OpenAIEmbedding
 
 
@@ -65,7 +64,7 @@ def run_retrieval(query: str):
         vector_store=pinecone_vector_store,
         embed_model=embed_model,
         query_mode="default",
-        similarity_top_k=2,
+        similarity_top_k=10,
     )
     retrieved_nodes = retriever.retrieve(query)
     return retrieved_nodes

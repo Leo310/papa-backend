@@ -62,4 +62,7 @@ if __name__ == "__main__":
     load_dotenv()
     embed_knowledge_base()
     # docs = load_documents()
-    # print(docs[0].metadata, docs[0])
+    # [
+    #     print(doc.id_ + "\n" + doc.metadata.__str__() + doc.text + "\n")
+    #     for doc in docs[:10]
+    # ]
