@@ -4,3 +4,4 @@ python-dotenv
 pinecone-client
 llama-index
 tqdm
+obsidiantools
